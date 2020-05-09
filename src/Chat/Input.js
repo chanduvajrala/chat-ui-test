@@ -9,7 +9,7 @@ const RightPanel = styled.div`
     }
     .send{
         float: left;
-        width: 10%;
+        width: 8%;
         text-align: center;
     }
     .input{
@@ -31,13 +31,16 @@ const Container = styled.div`
 export class Input extends Component {
 
     submit = () => {
-        this.props.add(this.input.innerText, 'right');
-        this.props.add("Pardon my ignorance. I am just a dummy.", 'left');
-        this.input.innerText = '';
+        if(this.input.innerText.trim() !== ''){
+            this.props.add(this.input.innerText, 'right');
+            this.props.add("Pardon my ignorance. I am just a dummy.", 'left');
+            this.input.innerText = '';
+        }
     }
     
     enter = (e) => {
         if(e.key === 'Enter'){
+            e.preventDefault();
             this.submit();
         }
     }
@@ -51,9 +54,11 @@ export class Input extends Component {
                             <div id="textarea" contentEditable="true" ref={(el) => { this.input = el }} onKeyDown={this.enter}></div>
                         </div>
                     </div>
-                    <div className="action">
-                        <a href="#" onClick={this.submit}>Send</a>
+                    <div className="send">
+                        {/* <a href="#" onClick={this.submit}>Send</a> */}
+                        <button className = "sendButton" onClick={this.submit}>Send</button>
                     </div>
+                    
                 </RightPanel>
             </Container>
         )

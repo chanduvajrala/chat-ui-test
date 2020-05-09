@@ -4,16 +4,18 @@ import styled from "styled-components";
 const ChatBubble = styled.div`
     position: relative;
     ${props => props.position === "left" && `{
-		margin-right: 50%;
+		    margin: 0px 50% 0px 1%;
+        background: #f0f3f6;
         float: left;
+        border-radius: 5px;
 	`} 
   
   ${props => props.position === "right" && `{
     > span {
       float: right;
-	  margin-right: 0;
+	    margin: 0px 1% 10px 50%;
       text-align: right;
-      margin-left: 50%;
+      background: #f9eab5;
     }
 	`};
 `;
@@ -23,10 +25,7 @@ const Text = styled.span`
   border-radius: 5px;
   padding: 10px;
   position: relative;
-  margin-top: 10px;
-  height: 50px;
   max-width: 500px;
-  background : #F6F6F6;
 `;
 
 

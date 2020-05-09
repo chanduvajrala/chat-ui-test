@@ -13,8 +13,8 @@ const Nav = styled.div`
 
 const NavItem = styled.div`
   border: 1px solid #383838;
-  width : 33%;
-  margin: "auto";
+  width : 32%;
+  line-height: 50px;
   display: inline-block;
   height: 50px;
 `;
@@ -26,6 +26,7 @@ export class Header extends Component {
                 <NavItem> Chat </NavItem>
                 <NavItem> My Jobs </NavItem>
                 <NavItem> Profile </NavItem>
+                <div id="offline">Looks like you have disconnected from the network</div>
             </Nav>
         )
     }

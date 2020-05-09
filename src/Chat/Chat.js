@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import List from './List'
 import Input from './Input'
+import Camera from './Camera'
 
 const ChatDiv = styled.div`
     background: orange;
@@ -23,6 +24,7 @@ export class Chat extends Component {
         let messages = this.state.messages;
         messages.push({content, position}); 
         this.setState({messages});
+        localStorage.setItem('messages', JSON.stringify(messages))
     }
 
     render() {
@@ -30,7 +32,10 @@ export class Chat extends Component {
             <div>
                 <ChatDiv>
                     <List messages = {this.state.messages}/>
-                    <Input add={this.addMessage}/>
+                    <div className= "footer">
+                        <Input add={this.addMessage}/>
+                        <Camera/>
+                    </div>
                 </ChatDiv>
             </div>
         )

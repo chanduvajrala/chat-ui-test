@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+
+.footer{
+  position: fixed;
+  bottom:0px;
+  height: 60px;
+  width: 100%;
+  background-color: #D3D3D3;
+}
+
+#offline{
+  height: 30px;
+  background: red;
+  color: white;
+  width: 100%;
+  z-index: 5;
+  display: none;
+}
+
+.sendButton{
+  height: 40px;
+  width: 100%;
+  font-size: 2vh;
+  margin-left: 5px;
+}
+
+body{
+  background: orange;
+}
+
+.action{
+  display: inline-block;
+  width: 8%;
+}
